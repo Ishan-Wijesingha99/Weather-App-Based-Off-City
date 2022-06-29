@@ -4,12 +4,12 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
 }
 
 :root {
     --grey: rgb(235, 235, 235);
-    --bluishPurp: rgb(17, 148, 171);
+    --aqua: rgb(17, 148, 171);
 }
 
 body {
@@ -20,7 +20,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: var(--bluishPurp);
+    background-color: var(--aqua);
     padding: 25px;
 }
 
@@ -46,12 +46,15 @@ body {
 /* Left side */
 .left-side {
     border: 2px solid black;
+    border-radius: 5px;
     height: 600px;
     width: 300px;
 }
 
 #searchbar-heading {
     margin: 5px;
+    text-align: center;
+    font-weight: 900;
 }
 
 .search-form {
@@ -60,33 +63,41 @@ body {
 
 #searchbar-input {
     width: 100%;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #search-button {
     width: 100%;
+    background-color: var(--aqua);
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 
 /* right side */
 .right-side {
-    border: 2px solid black;
     width: 700px;
     height: 600px;
 }
 
 
 /* current info block */
-.current-city-info-block {
+.current-city-info-section {
     border: 2px solid black;
+    border-radius: 5px;
     margin: 10px;
     height: 200px;
+    background-color: var(--aqua);
 }
 
 #city-name-and-date {
     font-size: 2rem;
+    font-weight: 900;
 }
 
-#city-name-and-date, #temp, #wind, #humidity, #UV-index {
+#city-name-and-date, #city-temp, #city-wind, #city-humidity, #city-UV-index {
     margin: 10px;
 }
 
@@ -94,19 +105,34 @@ body {
 /* five day forecast area */
 #five-day-forecast-heading {
     margin: 10px;
+    font-size: 1.5rem;
+    font-weight: 900;
 }
 
-.five-day-forecast-block {
+#block-1 {
+    margin-left: 0;
+}
+
+#block-5 {
+    margin-right: 0;
+}
+
+.five-day-forecast-section {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: 10px;
 }
 
 .forecast-block {
     border: 2px solid black;
+    border-radius: 5px;
     margin: 10px;
     padding: 12px;
+    background-color: var(--aqua);
 }
 
-.date, .temp, .wind, .humidity {
+.block-date, .block-temp, .block-wind, .block-humidity {
     font-size: 0.6rem;
+    margin-bottom: 10px;
 }
