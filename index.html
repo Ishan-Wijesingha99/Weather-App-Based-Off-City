@@ -7,10 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Search The Weather By City</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
-
         <link rel="stylesheet" href="./assets/index.css" />
         <script defer src="./assets/index.js"></script>
     </head>
@@ -22,5 +18,69 @@
         <nav class="navbar">
             <h2 id="nav-title">Search The Weather By City</h2>
         </nav>
+
+        <div class="entire-container">
+
+            <section class="left-side">
+                <h3 id="searchbar-heading">Search for a City</h3>
+
+                <form class="search-form" action="">
+                    <input id="searchbar-input" type="text" />
+                    <button id="search-button" type="submit">Search</button>
+
+
+                </form>
+            </section>
+
+            <section class="right-side">
+                <div class="current-city-info-block">
+                    <p id="city-name-and-date">Atlanta (99/99/99)</p>
+                    <p id="temp">Temp:</p>
+                    <p id="wind">Wind:</p>
+                    <p id="humidity">Humidity:</p>
+                    <p id="UV-index">UV Index:</p>
+                </div>
+
+                <h4 id="five-day-forecast-heading">5-Day Forecast</h4>
+
+                <div class="five-day-forecast-block">
+                    <div class="forecast-block" id="block-1">
+                        <p class="date" id="date-1">Date 1</p>
+                        <p class="temp" id="temp-1">Temp 1</p>
+                        <p class="wind" id="wind-1">Wind 1</p>
+                        <p class="humidity" id="humidity-1">Humidity 1</p>
+                    </div>
+
+                    <div class="forecast-block" id="block-2">
+                        <p class="date" id="date-2">Date 2</p>
+                        <p class="temp" id="temp-1">Temp 2</p>
+                        <p class="wind" id="wind-2">Wind 2</p>
+                        <p class="humidity" id="humidity-2">Humidity 2</p>
+                    </div>
+
+                    <div class="forecast-block" id="block-3">
+                        <p class="date" id="date-3">Date 3</p>
+                        <p class="temp" id="temp-1">Temp 3</p>
+                        <p class="wind" id="wind-3">Wind 3</p>
+                        <p class="humidity" id="humidity-3">Humidity 3</p>
+                    </div>
+
+                    <div class="forecast-block" id="block-4">
+                        <p class="date" id="date-4">Date 4</p>
+                        <p class="temp" id="temp-1">Temp 4</p>
+                        <p class="wind" id="wind-4">Wind 4</p>
+                        <p class="humidity" id="humidity-4">Humidity 4</p>
+                    </div>
+
+                    <div class="forecast-block" id="block-5">
+                        <p class="date" id="date-5">Date 5</p>
+                        <p class="temp" id="temp-5">Temp 5</p>
+                        <p class="wind" id="wind-5">Wind 5</p>
+                        <p class="humidity" id="humidity-5">Humidity 5</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </body>
 </html>

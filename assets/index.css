@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Titan One', sans-serif;
+    font-family: sans-serif;
     letter-spacing: 5px;
 }
 
@@ -25,4 +25,78 @@ body {
     font-size: 30px;
     color: var(--grey);
     font-weight: 100;
+}
+
+
+
+
+
+.entire-container {
+    margin: 20px;
+    height: 600px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.left-side {
+    border: 2px solid black;
+    height: 600px;
+    width: 300px;
+}
+
+#searchbar-heading {
+    margin: 5px;
+}
+
+.search-form {
+    margin: 5px;
+}
+
+#searchbar-input {
+    width: 100%;
+}
+
+#search-button {
+    width: 100%;
+}
+
+
+.right-side {
+    border: 2px solid black;
+    width: 700px;
+    height: 600px;
+}
+
+.current-city-info-block {
+    border: 2px solid black;
+    margin: 10px;
+    height: 200px;
+}
+
+#city-name-and-date {
+    font-size: 2rem;
+}
+
+#city-name-and-date, #temp, #wind, #humidity, #UV-index {
+    margin: 10px;
+}
+
+#five-day-forecast-heading {
+    margin: 10px;
+}
+
+.five-day-forecast-block {
+    display: flex;
+    margin: 10px;
+}
+
+.forecast-block {
+    border: 2px solid black;
+    margin: 10px;
+    padding: 12px;
+}
+
+.date, .temp, .wind, .humidity {
+    font-size: 0.6rem;
 }
