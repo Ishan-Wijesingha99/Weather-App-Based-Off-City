@@ -4,7 +4,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 :root {
@@ -55,6 +55,12 @@ body {
     margin: 5px;
     text-align: center;
     font-weight: 900;
+}
+
+#search-instructions {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 10px;
 }
 
 .search-form {
