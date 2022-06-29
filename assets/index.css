@@ -1,3 +1,4 @@
+/* general CSS */
 * {
     padding: 0;
     margin: 0;
@@ -15,6 +16,9 @@ body {
     background-color: var(--grey);
 }
 
+
+
+/* Navbar */
 .navbar {
     background-color: var(--bluishPurp);
     padding: 25px;
@@ -30,7 +34,7 @@ body {
 
 
 
-
+/* Entire Flex container  */
 .entire-container {
     margin: 20px;
     height: 600px;
@@ -39,6 +43,7 @@ body {
     justify-content: space-between;
 }
 
+/* Left side */
 .left-side {
     border: 2px solid black;
     height: 600px;
@@ -62,12 +67,15 @@ body {
 }
 
 
+/* right side */
 .right-side {
     border: 2px solid black;
     width: 700px;
     height: 600px;
 }
 
+
+/* current info block */
 .current-city-info-block {
     border: 2px solid black;
     margin: 10px;
@@ -82,6 +90,8 @@ body {
     margin: 10px;
 }
 
+
+/* five day forecast area */
 #five-day-forecast-heading {
     margin: 10px;
 }
