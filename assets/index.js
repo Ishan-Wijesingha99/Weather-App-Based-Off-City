@@ -2,6 +2,14 @@
 const searchbarInput = document.querySelector('#searchbar-input');
 const searchButton = document.querySelector('#search-button');
 
+const forecastBlockNodeList = document.querySelectorAll('.forecast-block');
+const blockDatesNodeList = document.querySelectorAll('.block-date');
+const blockTempNodeList = document.querySelectorAll('.block-temp');
+const blockWindNodeList = document.querySelectorAll('.block-wind');
+const blockHumidityNodeList = document.querySelectorAll('.block-humidity');
+
+
+
 const currentCityNameAndDate = document.querySelector('#city-name-and-date');
 const currentCityTemp = document.querySelector('#city-temp');
 const currentCityWind = document.querySelector('#city-wind');
@@ -47,13 +55,45 @@ searchButton.addEventListener('click', function(e) {
 
         currentCityNameAndDate.textContent = `${data.name} (${words[1]} ${words[2]} ${words[3]})`
 
-        currentCityTemp.textContent = `Temp: ${data.main.temp}`
+        currentCityTemp.textContent = `Temp: ${(data.main.temp - 273.15).toFixed(2)}°C`
 
-        currentCityWind.textContent = `Wind: ${data.wind.speed}`
+        currentCityWind.textContent = `Wind: ${data.wind.speed} MPH`
+
+        currentCityHumidity.textContent = `Humidity: ${data.main.humidity}%`
+
+        return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=minutely,hourly&appid=4351b60861d031e4e28b9b53af65fc5d`)
+
+
+    }).then(response => response.json())
+    .then(data2 => {
+        console.log(data2)
+
+        currentCityUVIndex.textContent = `UV Index: ${data2.current.uvi}`
+
+
+        return fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${data2.lat}&lon=${data2.lon}&appid=4351b60861d031e4e28b9b53af65fc5d`)
+    }).then(response => response.json())
+    .then(data3 => {
+        
+        console.log(data3);
+
+        blockTempNodeList.forEach(function(element) {
+            element.textContent = `Temp: ${(data3.list[element.dataset.set].main.temp).toFixed(2)}°C`
+        })
+
+        
+
 
 
 
 
     })
+
+
+
+
+
+
+
 })
 
