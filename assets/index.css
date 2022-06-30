@@ -22,6 +22,7 @@ body {
 .navbar {
     background-color: var(--aqua);
     padding: 25px;
+    border-bottom: 2px solid black;
 }
 
 #nav-title {
@@ -94,7 +95,7 @@ body {
     border: 2px solid black;
     border-radius: 5px;
     margin: 10px;
-    height: 200px;
+    /* height: 200px; */
     background-color: var(--aqua);
 }
 

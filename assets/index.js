@@ -47,6 +47,9 @@ searchButton.addEventListener('click', function(e) {
 
         currentCityNameAndDate.textContent = `${data.name} (${words[1]} ${words[2]} ${words[3]})`
 
+        currentCityTemp.textContent = `Temp: ${data.main.temp}`
+
+        currentCityWind.textContent = `Wind: ${data.wind.speed}`
 
 
 
