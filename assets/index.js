@@ -10,6 +10,20 @@ const currentCityUVIndex = document.querySelector('#city-UV-index');
 
 
 
+// const time = new Date();
+// const UTCtime = time.toUTCString();
+// const miliseconds = time.getTime();
+// const newMiliseconds = miliseconds + 36000*1000;
+
+
+
+// console.log(time)
+// console.log(UTCtime)
+// console.log(miliseconds);
+// console.log(newMiliseconds);
+// console.log(new Date(newMiliseconds).toUTCString())
+
+
 
 
 
@@ -25,7 +39,18 @@ searchButton.addEventListener('click', function(e) {
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        currentCityNameAndDate.textContent = `${data.name}`
+
+        // get the date of the current city and display it on the webpage
+        let cityTime = new Date((new Date().getTime()) + 1000*data.timezone).toUTCString();
+
+        let words = cityTime.split(' ')
+
+        currentCityNameAndDate.textContent = `${data.name} (${words[1]} ${words[2]} ${words[3]})`
+
+
+
+
+
     })
 })
 
