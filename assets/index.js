@@ -11,7 +11,7 @@ const currentCityUVIndex = document.querySelector('#city-UV-index');
 
 
 
-// IF YOU CAN'T ADD THE DATE OF THE CURRENT CITY EASILY WITHOUT PAYING ANY MONEY, THEN DON'T WORRY ABOUT IT, IT'S NOT WORTH THE HASSLE.
+
 
 searchButton.addEventListener('click', function(e) {
     // prevent reloading of the page
