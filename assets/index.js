@@ -21,17 +21,7 @@ const currentCityUVIndex = document.querySelector('#city-UV-index');
 
 
 
-// // trigger a search if one of the recent search results is clicked
-// let recentSearchElements = document.querySelectorAll('.recent-search-element')
-        
-// recentSearchElements.forEach(function(element) {
-//     element.addEventListener('click', function() {
 
-//         searchbarInput.value = `${element.textContent}`
-//         searchButton.click()
-
-//     })
-// })
 
 
 
@@ -42,13 +32,6 @@ const fetchFunction = function(cityNameInput) {
     .then(data => {
 
         console.log(data);
-
-
-
-
-
-
-
 
         // create a HTML element based off what was searched
 
@@ -65,14 +48,6 @@ const fetchFunction = function(cityNameInput) {
             })
     
         })
-
-
-
-
-
-
-
-
 
 
         // get the date of the current city and display it on the webpage
@@ -98,6 +73,25 @@ const fetchFunction = function(cityNameInput) {
         console.log(data2)
 
         currentCityUVIndex.textContent = `UV Index: ${data2.current.uvi}`
+
+        currentCityUVIndex.style.padding = '3px';
+        currentCityUVIndex.style.borderRadius = '5px'
+        currentCityUVIndex.style.boxShadow = '0px 0px 4px 1px black'
+
+        if(data2.current.uvi < 3) {
+            currentCityUVIndex.style.backgroundColor = 'green'
+        } else if(data2.current.uvi >= 3 && data2.current.uvi < 6) {
+            currentCityUVIndex.style.backgroundColor = 'rgb(215, 215, 73)'
+        } else if(data2.current.uvi >= 6 && data2.current.uvi < 8) {
+            currentCityUVIndex.style.backgroundColor = 'orange'
+        } else if(data2.current.uvi >= 8) {
+            currentCityUVIndex.style.backgroundColor = 'red'
+        }
+
+
+
+
+
 
         return fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${data2.lat}&lon=${data2.lon}&appid=4351b60861d031e4e28b9b53af65fc5d`)
 

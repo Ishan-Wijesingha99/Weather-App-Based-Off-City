@@ -38,7 +38,6 @@ body {
 /* Entire Flex container  */
 .entire-container {
     margin: 20px;
-    height: 600px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -101,9 +100,7 @@ body {
 
 .recent-search-element:hover {
     cursor: pointer;
-    background-color: var(--aqua);
-    color: black;
-    border: 2px solid black;
+    box-shadow: 0px 0px 2px 1px black;
 }
 
 
@@ -123,13 +120,16 @@ body {
     border-radius: 5px;
     margin: 10px;
     margin-top: 0px;
-    /* height: 200px; */
     background-color: var(--aqua);
 }
 
 #city-name-and-date {
     font-size: 2rem;
     font-weight: 900;
+}
+
+#city-UV-index {
+    display: inline-block;
 }
 
 #city-name-and-date, #city-temp, #city-wind, #city-humidity, #city-UV-index {
@@ -171,7 +171,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px;
+    margin: 0px;
 }
 
 .forecast-block {
@@ -201,3 +201,71 @@ body {
 
 
 
+
+/* making responsive */
+@media only screen and (max-width: 960px) {
+    .block-date {
+        font-size: 0.6rem;
+    }
+}
+
+@media only screen and (max-width: 875px) {
+    #searchbar-heading {
+        font-size: 0.7rem;
+    }
+
+    #search-instructions {
+        font-size: 0.6rem;
+    }
+}
+
+@media only screen and (max-width: 796px) {
+    .entire-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-side {
+        margin-bottom: 20px;
+    }
+
+    .current-city-info-section {
+        margin-left: auto;
+        margin-right: auto;
+        width: 85vw;
+    }
+
+    .city-namedate-img-container {
+        justify-content: center;
+    }
+
+    #city-name-and-date {
+        font-size: 1.2rem;
+    }
+
+    #five-day-forecast-heading {
+        text-align: center;
+    }
+
+    .five-day-forecast-section {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .right-side {
+        width: 80vw;
+    }
+
+    .forecast-block {
+        width: 50vw;
+    }
+
+    #block-1 {
+        margin: 10px;
+    }
+
+    #block-5 {
+        margin: 10px;
+    }
+}
