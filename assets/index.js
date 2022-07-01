@@ -7,10 +7,12 @@ const blockDatesNodeList = document.querySelectorAll('.block-date');
 const blockTempNodeList = document.querySelectorAll('.block-temp');
 const blockWindNodeList = document.querySelectorAll('.block-wind');
 const blockHumidityNodeList = document.querySelectorAll('.block-humidity');
+const blockImgNodeList = document.querySelectorAll('.block-img');
 
 
 
 const currentCityNameAndDate = document.querySelector('#city-name-and-date');
+const currentCityImg = document.querySelector('#city-img');
 const currentCityTemp = document.querySelector('#city-temp');
 const currentCityWind = document.querySelector('#city-wind');
 const currentCityHumidity = document.querySelector('#city-humidity');
@@ -55,6 +57,8 @@ searchButton.addEventListener('click', function(e) {
 
         currentCityNameAndDate.textContent = `${data.name} (${words[1]} ${words[2]} ${words[3]})`
 
+        currentCityImg.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+
         currentCityTemp.textContent = `Temp: ${(data.main.temp - 273.15).toFixed(2)}°C`
 
         currentCityWind.textContent = `Wind: ${data.wind.speed} MPH`
@@ -77,11 +81,29 @@ searchButton.addEventListener('click', function(e) {
         
         console.log(data3);
 
+        blockDatesNodeList.forEach(function(element) {
+            let dateAndTime = data3.list[element.dataset.set].dt_txt;
+            let dateAndTimeArray = dateAndTime.split(' ');
+            console.log(dateAndTimeArray);
+            element.textContent = `${dateAndTimeArray[0]}`
+            element.style.textDecoration = 'underline';
+        })
+
+        blockImgNodeList.forEach(function(element) {
+            element.src = `http://openweathermap.org/img/wn/${data3.list[element.dataset.set].weather[0].icon}@2x.png`
+        })
+
         blockTempNodeList.forEach(function(element) {
             element.textContent = `Temp: ${(data3.list[element.dataset.set].main.temp).toFixed(2)}°C`
         })
 
-        
+        blockWindNodeList.forEach(function(element) {
+            element.textContent = `Wind: ${(data3.list[element.dataset.set].wind.speed).toFixed(2)} MPH`
+        })
+
+        blockHumidityNodeList.forEach(function(element) {
+            element.textContent = `Humidity: ${(data3.list[element.dataset.set].main.humidity).toFixed(2)}%`
+        })
 
 
 

@@ -108,6 +108,21 @@ body {
     margin: 10px;
 }
 
+#city-temp, #city-wind, #city-humidity, #city-UV-index {
+    color: white;
+}
+
+.city-namedate-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#city-img {
+    display: block;
+    height: 50px;
+}
+
 
 /* five day forecast area */
 #five-day-forecast-heading {
@@ -140,6 +155,16 @@ body {
 }
 
 .block-date, .block-temp, .block-wind, .block-humidity {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
+    color: white;
+    font-weight: bold;
     margin-bottom: 10px;
+}
+
+.block-date {
+    text-decoration: underline;
+}
+
+.block-img {
+    height: 50px;
 }

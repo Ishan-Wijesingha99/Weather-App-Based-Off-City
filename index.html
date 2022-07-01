@@ -35,7 +35,11 @@
 
             <section class="right-side">
                 <div class="current-city-info-section">
-                    <p id="city-name-and-date">Atlanta (99/99/99)</p>
+                    <div class="city-namedate-img-container">
+                        <p id="city-name-and-date">City Name and Date</p>
+                        <img id="city-img"/>
+                    </div>
+
                     <p id="city-temp">Temp:</p>
                     <p id="city-wind">Wind:</p>
                     <p id="city-humidity">Humidity:</p>
@@ -46,14 +50,16 @@
 
                 <div class="five-day-forecast-section">
                     <div class="forecast-block" id="block-1">
-                        <p id="date-1">Date</p>
-                        <p id="temp-1">Temp:</p>
-                        <p id="wind-1">Wind:</p>
-                        <p id="humidity-1">Humidity:</p>
+                        <p data-set="6" class="block-date" id="date-1">Date</p>
+                        <img data-set="6" class="block-img"/>
+                        <p data-set="6" class="block-temp" id="temp-1">Temp:</p>
+                        <p data-set="6" class="block-wind" id="wind-1">Wind:</p>
+                        <p data-set="6" class="block-humidity" id="humidity-1">Humidity:</p>
                     </div>
 
                     <div class="forecast-block" id="block-2">
                         <p data-set="14" class="block-date" id="date-2">Date</p>
+                        <img data-set="14" class="block-img"/>
                         <p data-set="14" class="block-temp" id="temp-1">Temp:</p>
                         <p data-set="14" class="block-wind" id="wind-2">Wind:</p>
                         <p data-set="14" class="block-humidity" id="humidity-2">Humidity:</p>
@@ -61,6 +67,7 @@
 
                     <div class="forecast-block" id="block-3">
                         <p data-set="22" class="block-date" id="date-3">Date</p>
+                        <img data-set="22" class="block-img"/>
                         <p data-set="22" class="block-temp" id="temp-1">Temp:</p>
                         <p data-set="22" class="block-wind" id="wind-3">Wind:</p>
                         <p data-set="22"
@@ -68,8 +75,8 @@
                     </div>
 
                     <div class="forecast-block" id="block-4">
-                        <p data-set="30"
-                        class="block-date" id="date-4">Date</p>
+                        <p data-set="30" class="block-date" id="date-4">Date</p>
+                        <img data-set="30" class="block-img"/>
                         <p data-set="30" class="block-temp" id="temp-1">Temp:</p>
                         <p data-set="30" class="block-wind" id="wind-4">Wind:</p>
                         <p data-set="30" class="block-humidity" id="humidity-4">Humidity:</p>
@@ -77,6 +84,7 @@
 
                     <div class="forecast-block" id="block-5">
                         <p data-set="38" class="block-date" id="date-5">Date</p>
+                        <img data-set="38" class="block-img"/>
                         <p data-set="38" class="block-temp" id="temp-5">Temp:</p>
                         <p data-set="38" class="block-wind" id="wind-5">Wind:</p>
                         <p data-set="38" class="block-humidity" id="humidity-5">Humidity:</p>
