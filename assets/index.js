@@ -3,14 +3,14 @@ const searchbarInput = document.querySelector('#searchbar-input');
 const searchButton = document.querySelector('#search-button');
 const searchForm = document.querySelector('.search-form');
 
+let recentSearchResultsNodeList;
+
 const forecastBlockNodeList = document.querySelectorAll('.forecast-block');
 const blockDatesNodeList = document.querySelectorAll('.block-date');
 const blockTempNodeList = document.querySelectorAll('.block-temp');
 const blockWindNodeList = document.querySelectorAll('.block-wind');
 const blockHumidityNodeList = document.querySelectorAll('.block-humidity');
 const blockImgNodeList = document.querySelectorAll('.block-img');
-
-
 
 const currentCityNameAndDate = document.querySelector('#city-name-and-date');
 const currentCityImg = document.querySelector('#city-img');
@@ -21,43 +21,51 @@ const currentCityUVIndex = document.querySelector('#city-UV-index');
 
 
 
-// const time = new Date();
-// const UTCtime = time.toUTCString();
-// const miliseconds = time.getTime();
-// const newMiliseconds = miliseconds + 36000*1000;
+// // trigger a search if one of the recent search results is clicked
+// let recentSearchElements = document.querySelectorAll('.recent-search-element')
+        
+// recentSearchElements.forEach(function(element) {
+//     element.addEventListener('click', function() {
+
+//         searchbarInput.value = `${element.textContent}`
+//         searchButton.click()
+
+//     })
+// })
 
 
 
-// console.log(time)
-// console.log(UTCtime)
-// console.log(miliseconds);
-// console.log(newMiliseconds);
-// console.log(new Date(newMiliseconds).toUTCString())
+const fetchFunction = function(cityNameInput) {
 
-
-
-
-
-searchButton.addEventListener('click', function(e) {
-    // prevent reloading of the page
-    e.preventDefault();
-
-    // capture the value that was written in the searchbar
-    let cityName = searchbarInput.value;
-
-    
-
-    // based off that value, use fetch request to get the relevant data about the city from the OpenWeather API
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=4351b60861d031e4e28b9b53af65fc5d`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityNameInput}&appid=4351b60861d031e4e28b9b53af65fc5d`)
     .then(response => response.json())
     .then(data => {
+
         console.log(data);
 
 
+
+
+
+
+
+
         // create a HTML element based off what was searched
+
         searchForm.insertAdjacentHTML('afterend', 
-        `<div class="recent-search-element">${cityName}</div>`
+        `<div class="recent-search-element">${cityNameInput}</div>`
         )
+
+        recentSearchResultsNodeList = document.querySelectorAll('.recent-search-element');
+
+        recentSearchResultsNodeList.forEach(function(element) {
+
+            element.addEventListener('click', function() {
+                searchbarInput.value = element.textContent;
+            })
+    
+        })
+
 
 
 
@@ -91,8 +99,9 @@ searchButton.addEventListener('click', function(e) {
 
         currentCityUVIndex.textContent = `UV Index: ${data2.current.uvi}`
 
-
         return fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${data2.lat}&lon=${data2.lon}&appid=4351b60861d031e4e28b9b53af65fc5d`)
+
+
     }).then(response => response.json())
     .then(data3 => {
         
@@ -122,17 +131,32 @@ searchButton.addEventListener('click', function(e) {
             element.textContent = `Humidity: ${(data3.list[element.dataset.set].main.humidity).toFixed(2)}%`
         })
 
-
-
-
-
     })
 
 
+}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+searchButton.addEventListener('click', function(e) {
+    // prevent reloading of the page
+    e.preventDefault();
+
+    fetchFunction(searchbarInput.value);
 
 
 
 })
+
 
