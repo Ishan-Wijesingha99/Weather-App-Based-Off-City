@@ -1,6 +1,7 @@
 // creating variables for HTML elements
 const searchbarInput = document.querySelector('#searchbar-input');
 const searchButton = document.querySelector('#search-button');
+const searchForm = document.querySelector('.search-form');
 
 const forecastBlockNodeList = document.querySelectorAll('.forecast-block');
 const blockDatesNodeList = document.querySelectorAll('.block-date');
@@ -43,12 +44,28 @@ searchButton.addEventListener('click', function(e) {
 
     // capture the value that was written in the searchbar
     let cityName = searchbarInput.value;
+
     
+
     // based off that value, use fetch request to get the relevant data about the city from the OpenWeather API
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=4351b60861d031e4e28b9b53af65fc5d`)
     .then(response => response.json())
     .then(data => {
         console.log(data);
+
+
+        // create a HTML element based off what was searched
+        searchForm.insertAdjacentHTML('afterend', 
+        `<div class="recent-search-element">${cityName}</div>`
+        )
+
+
+
+
+
+
+
+
 
         // get the date of the current city and display it on the webpage
         let cityTime = new Date((new Date().getTime()) + 1000*data.timezone).toUTCString();
@@ -94,7 +111,7 @@ searchButton.addEventListener('click', function(e) {
         })
 
         blockTempNodeList.forEach(function(element) {
-            element.textContent = `Temp: ${(data3.list[element.dataset.set].main.temp).toFixed(2)}°C`
+            element.textContent = `Temp: ${(data3.list[element.dataset.set].main.temp - 273.15).toFixed(2)}°C`
         })
 
         blockWindNodeList.forEach(function(element) {
