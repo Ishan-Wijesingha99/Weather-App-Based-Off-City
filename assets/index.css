@@ -18,6 +18,8 @@ body {
 
 
 
+
+
 /* Navbar */
 .navbar {
     background-color: var(--aqua);
@@ -35,6 +37,7 @@ body {
 
 
 
+
 /* Entire Flex container  */
 .entire-container {
     margin: 20px;
@@ -42,6 +45,10 @@ body {
     align-items: flex-start;
     justify-content: center;
 }
+
+
+
+
 
 /* Left side */
 .left-side {
@@ -85,9 +92,6 @@ body {
     box-shadow: 0px 0px 2px 1px black;
 }
 
-
-
-
 .recent-search-element {
     text-align: center;
     padding: 10px;
@@ -112,6 +116,9 @@ body {
     width: 700px;
     height: 600px;
 }
+
+
+
 
 
 /* current info block */
@@ -152,6 +159,9 @@ body {
 }
 
 
+
+
+
 /* five day forecast area */
 #five-day-forecast-heading {
     margin: 10px;
@@ -188,7 +198,6 @@ body {
 .block-img {
     height: 50px;
 }
-
 
 
 
@@ -237,7 +246,6 @@ body {
         font-size: 1.2rem;
     }
 
-
     #five-day-forecast-heading {
         text-align: center;
         margin-top: 20px;
@@ -257,11 +265,7 @@ body {
         text-align: center;
     }
 
-    #block-1 {
-        margin: 10px;
-    }
-
-    #block-5 {
+    #block-1, #block-5 {
         margin: 10px;
     }
 }
