@@ -82,7 +82,7 @@ const fetchFunction = function(cityNameInput) {
 
         // based on the value of the UV index, change the background colour of the element
         // this data is based off the UV index given in the following link
-        // https://www.aimatmelanoma.org/melanoma-101/prevention/what-is-ultraviolet-uv-radiation/#:~:text=The%20UV%20Index%20Scale&text=UV%20Index%200%2D2%20means,harm%20from%20unprotected%20sun%20exposure.
+        // https://www.aimatmelanoma.org/melanoma-101/prevention/what-is-ultraviolet-uv-radiation/
         if(data2.current.uvi < 3) {
             currentCityUVIndex.style.backgroundColor = 'green'
         } else if(data2.current.uvi >= 3 && data2.current.uvi < 6) {
